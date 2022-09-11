@@ -1,0 +1,11 @@
+.nosotros_container{
+    display: grid;
+    gap: 3rem;
+}
+
+@media (min-width: 768px) {
+    .nosotros_container{
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center;
+    }
+}
