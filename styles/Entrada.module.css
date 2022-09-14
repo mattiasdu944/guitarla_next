@@ -1,5 +1,13 @@
+.entrada{
+    max-width: 870px;
+    margin: auto;
+}
 .entrada img{
     border-radius: .5rem;
+}
+
+.entrada_text{
+    white-space: pre-wrap;
 }
 
 .entrada_content{
