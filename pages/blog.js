@@ -7,16 +7,17 @@ const blog = ({ entradas }) => {
     <Layout pagina='Blog'>
       <main className='container'>
 
-      <h2 className='heading'>Blog</h2>
+        <h2 className='heading'>Blog</h2>
 
-      <div className={styles.entradas_container}>
+        <div className={styles.entradas_container}>
 
-      {entradas.map(entrada => (
-        <Entrada
-        key={entrada.id}
-        entrada={entrada}
-        />
-        ))}
+          {entradas.map(entrada => (
+            <Entrada
+              key={entrada.id}
+              id={entrada.id}
+              entrada={entrada.attributes}
+            />
+          ))}
         </div>
       </main>
     </Layout>
@@ -24,9 +25,9 @@ const blog = ({ entradas }) => {
 }
 
 export async function getStaticProps() {
-  const response = await fetch('http://localhost:1337/blogs')
-  const entradas = await response.json();
-
+  const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/blogs?populate=imagen`)
+  const { data } = await response.json();
+  const entradas = data
   return {
     props: {
       entradas
