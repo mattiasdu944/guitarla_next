@@ -4,17 +4,17 @@ import { formatearFecha } from "../../helpers"
 import styles from '../../styles/Entrada.module.css'
 
 const EntradaBlog = ({ entrada }) => {
-    const { attributes: { titulo, descripcion, publishedAt, } } = entrada
-
-    const { attributes: { imagen: { data: { attributes: { url } } } } } = entrada
+    
+    const {titulo, descripcion, publishedAt, url} = entrada;
+    const imagen = entrada.imagen.data[0].attributes;
 
     return (
-        <Layout>
+        <Layout pagina={titulo}>
 
             <main className="container">
                 <h1 className="heading">{titulo}</h1>
                 <article className={styles.entrada}>
-                    <Image layout="responsive" width={800} height={600} src={url} alt={`Imagen entrada ${titulo}`} />
+                    <Image layout="responsive" width={800} height={600} src={imagen.url} alt={`Imagen entrada ${titulo}`} />
                     <div className={styles.entrada_content}>
                         <p className={styles.entrada_fecha}>
                             {formatearFecha(publishedAt)}
@@ -35,7 +35,7 @@ export async function getStaticPaths() {
     const { data } = await response.json();
 
     const paths = data.map(entrada => ({
-        params: { id: entrada.id.toString() }
+        params: { url: entrada.attributes.url.toString() }
     }))
     return {
         paths,
@@ -43,13 +43,13 @@ export async function getStaticPaths() {
     }
 }
 
-export async function getStaticProps({ params: { id } }) {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/blogs/${id}?populate=imagen`)
+export async function getStaticProps({ params: { url } }) {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/blogs?filters[url][$eq]=${url}&populate=imagen`)
     const { data } = await response.json();
     const entrada = data
     return {
         props: {
-            entrada
+            entrada : entrada[0].attributes
         }
     }
 }

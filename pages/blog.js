@@ -6,11 +6,8 @@ const blog = ({ entradas }) => {
   return (
     <Layout pagina='Blog'>
       <main className='container'>
-
         <h2 className='heading'>Blog</h2>
-
         <div className={styles.entradas_container}>
-
           {entradas.map(entrada => (
             <Entrada
               key={entrada.id}
@@ -25,7 +22,7 @@ const blog = ({ entradas }) => {
 }
 
 export async function getStaticProps() {
-  const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/blogs?populate=imagen`)
+  const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/blogs?populate=imagen&sort=createdAt%3Adesc`)
   const { data } = await response.json();
   const entradas = data
   return {
