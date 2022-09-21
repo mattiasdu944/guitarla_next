@@ -1,0 +1,58 @@
+.guitarra{    
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    column-gap: 1rem;
+    align-items: center;
+    border-radius: 0.5rem;
+    border: 1px solid transparent;
+    max-width: 79rem;
+    margin: 0 auto;
+}
+
+.guitarra_content{
+    padding: 2rem;
+}
+
+.guitarra_content h3{
+    font-weight: 900;
+    font-size: 3.5rem;
+    text-transform: uppercase;
+}
+
+.guitarra_description{
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    overflow: hidden;
+}
+
+.guitarra_description_page{
+    font-size: 2rem;
+}
+
+.guitarra_precio{
+    color: var(--primary);
+    margin: 0;
+    font-weight: 800;
+    font-size: 2.5rem;
+}
+
+.guitarra_enlace a{ 
+    margin: 1rem 0;
+    display: block;
+    width: 100%;
+    border: 2px solid var(--primary);
+    padding: 1rem;
+    font-size: 1.2rem;
+    text-align: center;
+    cursor: pointer;
+    border-radius: .5rem;
+    color: var(--negro);
+    transition-property: background-color;
+    transition-duration: .2s;
+}
+
+.guitarra_enlace a:hover{
+    color: var(--blanco);
+    background-color: var(--primary);
+}
