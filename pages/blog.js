@@ -1,12 +1,13 @@
-
 import Entrada from '../components/Entrada';
 import Layout from '../components/Layout'
 import styles from '../styles/Blog.module.css'
+
+
 const blog = ({ entradas }) => {
   return (
-    <Layout pagina='Blog'>
+    <Layout pagina='Blog GuitarLA'>
       <main className='container'>
-        <h2 className='heading'>Blog</h2>
+        <h2 className='heading'>Blogs</h2>
         <div className={styles.entradas_container}>
           {entradas.map(entrada => (
             <Entrada

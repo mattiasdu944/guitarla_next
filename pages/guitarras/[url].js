@@ -30,23 +30,7 @@ const Producto = ({ guitarra }) => {
             <p className={styles.guitarra_precio}>Precio: ${precio}</p>
           </div>
         </div>
-        
       </main>
-      {/* <div className={styles.guitarra}>
-        <Image
-          layout="responsive"
-          width={280} height={350}
-          src={imagen.url}
-          alt={titulo}
-        />
-
-        <div className={styles.guitarra_content}>
-          <h3>{titulo}</h3>
-          <p className={styles.guitarra_description_page}>{descripcion}</p>
-          <p className={styles.guitarra_precio}>Precio: ${precio}</p>
-        </div>
-
-      </div> */}
     </Layout>
   )
 }

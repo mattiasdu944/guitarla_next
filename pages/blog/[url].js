@@ -28,30 +28,38 @@ const EntradaBlog = ({ entrada }) => {
     )
 }
 
-export async function getStaticPaths() {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/blogs?populate=imagen`)
-    const { data } = await response.json();
+// export async function getStaticPaths() {
+//     const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/blogs?populate=imagen`)
+//     const { data } = await response.json();
 
-    const paths = data.map(entrada => ({
-        params: { url: entrada.attributes.url.toString() }
-    }))
+//     const paths = data.map(entrada => ({
+//         params: { url: entrada.attributes.url.toString() }
+//     }))
+//     return {
+//         paths,
+//         fallback: false
+//     }
+// }
+
+// export async function getStaticProps({ params: { url } }) {
+//     const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/blogs?filters[url][$eq]=${url}&populate=imagen`)
+//     const { data } = await response.json();
+//     const entrada = data
+//     return {
+//         props: {
+//             entrada : entrada[0].attributes
+//         }
+//     }
+// }
+
+export async function getServerSideProps({ query: { url } }) {
+    const responnse = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/blogs?filters[url][$eq]=${url}&populate=imagen`)
+    const { data } = await responnse.json();
     return {
-        paths,
-        fallback: false
+      props: {
+        entrada: data[0].attributes
+      }
     }
-}
-
-export async function getStaticProps({ params: { url } }) {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/blogs?filters[url][$eq]=${url}&populate=imagen`)
-    const { data } = await response.json();
-    const entrada = data
-    return {
-        props: {
-            entrada : entrada[0].attributes
-        }
-    }
-}
-
-
+  }
 
 export default EntradaBlog

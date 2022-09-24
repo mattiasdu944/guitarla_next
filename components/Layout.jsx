@@ -7,13 +7,12 @@ const Layout = ({children, pagina}) => {
   return (
     <>
         <Head>
-            <meta name='description' content='Sitio Web de venta de guitarras'/>
+            <meta name='description' content='Sitio Web de venta de guitarras GuitarLA'/>
             <title>GuitarLA | {pagina}</title>
         </Head>
-
         <Header/>
     
-        {children}
+          {children}
     
         <Footer/>
     </>
