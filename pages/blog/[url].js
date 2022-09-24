@@ -10,7 +10,6 @@ const EntradaBlog = ({ entrada }) => {
 
     return (
         <Layout pagina={titulo}>
-
             <main className="container">
                 <h1 className="heading">{titulo}</h1>
                 <article className={styles.entrada}>
@@ -19,7 +18,6 @@ const EntradaBlog = ({ entrada }) => {
                         <p className={styles.entrada_fecha}>
                             {formatearFecha(publishedAt)}
                         </p>
-
                         <p className={styles.entrada_text}>
                             {descripcion}
                         </p>

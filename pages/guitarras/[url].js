@@ -9,10 +9,33 @@ const Producto = ({ guitarra }) => {
 
   return (
     <Layout pagina={titulo}>
-      <div className={styles.guitarra}>
+      <main className="container">
+
+        <div className={styles.guitarra_page}>
+          <div className={styles.guitarra_title_page}>
+
+            <h3>Guitarra {titulo}</h3>
+            <Image
+              width={280} height={550}
+              src={imagen.url}
+              alt={titulo}
+            />
+          </div>
+          <div className={styles.guitarra_content_page}>
+            
+            <h4>
+              Descripcion
+            </h4>
+            <p className={styles.guitarra_description_page}>{descripcion}</p>
+            <p className={styles.guitarra_precio}>Precio: ${precio}</p>
+          </div>
+        </div>
+        
+      </main>
+      {/* <div className={styles.guitarra}>
         <Image
           layout="responsive"
-          width={180} height={350}
+          width={280} height={350}
           src={imagen.url}
           alt={titulo}
         />
@@ -23,7 +46,7 @@ const Producto = ({ guitarra }) => {
           <p className={styles.guitarra_precio}>Precio: ${precio}</p>
         </div>
 
-      </div>
+      </div> */}
     </Layout>
   )
 }

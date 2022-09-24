@@ -1,5 +1,6 @@
+
 .listado{
     display: grid;
-    gap: 4rem;
+    gap: 5rem;
     grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
 }

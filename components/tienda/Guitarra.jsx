@@ -9,15 +9,15 @@ const Guitarra = ({guitarra}) => {
   return (
     <div className={styles.guitarra}>
       <Image 
-        layout="responsive" 
-        width={180} height={350} 
+        layout="intrinsic"
+        width={250} height={450} 
         src={imagen.url} 
         alt={titulo}
       />
       <div className={styles.guitarra_content}>
         <h3>{titulo}</h3>
         <p className={styles.guitarra_description}>{descripcion}</p>
-        <p className={styles.guitarra_precio}>${precio}</p> 
+        <p className={styles.guitarra_precio}>Precio: ${precio}</p> 
         <div className={styles.guitarra_enlace}>
           <Link href={`/guitarras/${url}`}>Ver Producto</Link>
         </div>
