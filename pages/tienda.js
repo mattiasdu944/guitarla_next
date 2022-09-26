@@ -11,7 +11,7 @@ const Tienda = ({guitarras}) => {
         />
 
       </main>
-    </Layout>
+    </Layout>  
   )
 }
 
