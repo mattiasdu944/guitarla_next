@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { formatearFecha } from "../../helpers";
 import styles from '../../styles/Entrada.module.css'
+
 const Entrada = ({entrada}) => {
     const { titulo, resumen, url, publishedAt} = entrada;
     const imagen = entrada.imagen.data[0].attributes;

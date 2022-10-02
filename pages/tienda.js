@@ -1,3 +1,4 @@
+import { Fade } from 'react-awesome-reveal';
 import Layout from '../components/Layout'
 import Listado from '../components/tienda/Listado';
 
@@ -5,7 +6,9 @@ const Tienda = ({guitarras}) => {
   return (
     <Layout pagina="Tienda">
       <main className="container">
-        <h1 className="heading">Nuestra coleccion</h1>
+        <Fade>
+          <h1 className="heading">Nuestra coleccion</h1>
+        </Fade>
         <Listado
           guitarras={guitarras}
         />

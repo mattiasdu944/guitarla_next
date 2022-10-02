@@ -1,7 +1,16 @@
 .entrada{
     max-width: 870px;
     margin: auto;
+    border: 2px solid transparent;
+    border-radius: .5rem;
+    transition-property: box-shadow;
+    transition-duration: .3s;
 }
+
+.entrada:hover{
+    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.1);
+}
+
 .entrada img{
     border-radius: .5rem;
 }
@@ -17,13 +26,17 @@
 .entrada_content h3{
     font-weight: 500;
     font-size: 3rem;
-    font-weight: 800;
+    font-weight: 900;
     margin: 0;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
 }
 
 .entrada_fecha{
     color: var(--primary);
-    font-weight: 700;
+    font-weight: 800;
 }
 
 .entrada_resumen{
@@ -31,25 +44,54 @@
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 4;
+    text-align: justify;
     overflow: hidden;
 }
 
 .entrada_content a{
-    margin: 1rem 0;
-    display: block;
-    width: 100%;
-    border: 2px solid var(--primary);
-    padding: 1rem;
-    font-size: 1.2rem;
-    text-align: center;
-    cursor: pointer;
+    background-color: var(--negro);
     border-radius: .5rem;
-    color: var(--negro);
+    color: var(--blanco);
+    font-weight: 900;
+    cursor: pointer;
+    display: block;
+    font-size: 1.5rem;
+    margin: 1rem 0;
+    padding: 1rem 0;
+    text-align: center;
     transition-property: background-color;
     transition-duration: .2s;
+    width: 100%;
 }
 
 .entrada_content a:hover{
     color: var(--blanco);
     background-color: var(--primary);
+}
+
+.entrada_article{
+    max-width: 90%;
+    margin: auto;
+    padding: 3rem 0;
+}
+
+.entrada_article img{
+    border-radius: .5rem;
+}
+
+.blog_fecha{
+    font-weight: 500;
+    font-size: 2rem;
+    margin: 0;
+}
+
+.blog_title{
+    font-weight: 900;
+    color: var(--primary);
+    margin: 0 0 3rem 0;
+}
+
+.blog_description{
+    font-size: 1.8rem;
+    text-align: justify;
 }

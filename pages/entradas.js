@@ -1,3 +1,4 @@
+import { Fade } from "react-awesome-reveal";
 import Entrada from "../components/entradas/Entrada";
 import Layout from "../components/Layout"
 import styles from "../styles/Listado.module.css"
@@ -7,6 +8,7 @@ const Entradas = ({entradas}) => {
         <main className="container">
             <h3 className="heading">Blogs</h3>
             <div className={styles.listado}>
+            <Fade cascade duration={350}>
 
             {entradas.map(entrada =>
               <Entrada
@@ -14,6 +16,7 @@ const Entradas = ({entradas}) => {
               entrada={entrada.attributes}
               />  
               )}
+            </Fade>
             </div>
         </main>
     </Layout>

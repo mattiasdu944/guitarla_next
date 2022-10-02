@@ -1,5 +1,6 @@
 import Image from "next/image";
 import React from "react";
+import { Fade } from "react-awesome-reveal";
 import Layout from "../components/Layout";
 import styles from '../styles/Nosotros.module.css'
 
@@ -9,10 +10,14 @@ const Nosotros = () => {
       <main className="container">
 
 
-        <h2 className="heading">Nosotros</h2>
+        <h2 className="heading">Sobre Nosotros</h2>
         <div className={styles.nosotros_container}>
+          <Fade>
+
           <Image layout="intrinsic" width={600} height={450} src='/img/nosotros.jpg' alt="Imagen Sobre Nosotros"/>
-          <div>
+          <div className={styles.nosotros_content}>
+            <h3>Nuestra Vision</h3>
+            <div className={styles.separator}><span></span></div>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sit
               amet placerat tortor, non ornare nisi. Morbi efficitur eu quam eu
@@ -28,17 +33,8 @@ const Nosotros = () => {
               porttitor. Pellentesque accumsan lorem ac purus ultricies vestibulum
               in vel orci. Morbi ultrices velit eu ipsum faucibus blandit. 
             </p>
-            <p>
-              Aliquamquis egestas neque. Integer vel erat fringilla, varius erat eget,
-              fermentum neque. Curabitur at viverra augue, vel dictum justo.
-              Aliquam congue, libero vitae placerat lobortis, tortor orci dictum
-              felis, convallis commodo turpis nisi quis tellus. Cras molestie
-              pharetra eros id commodo. Aenean rhoncus justo hendrerit nisl
-              euismod elementum. Vivamus vestibulum mauris at enim auctor, sit
-              amet elementum sem imperdiet. Donec sit amet risus eu velit
-              tincidunt vehicula at id libero. Curabitur at congue massa.
-            </p>
           </div>
+          </Fade>
         </div>
       </main>
     </Layout>
