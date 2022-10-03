@@ -8,7 +8,7 @@ const Entradas = ({entradas}) => {
         <main className="container">
             <h3 className="heading">Blogs</h3>
             <div className={styles.listado}>
-            <Fade cascade duration={350}>
+            <Fade cascade duration={350} triggerOnce>
 
             {entradas.map(entrada =>
               <Entrada

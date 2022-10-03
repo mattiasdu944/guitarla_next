@@ -12,7 +12,7 @@ const Listado = ({ guitarras }) => {
 
   return (
     <div className={styles.listado}>
-      <Fade cascade duration={500}>
+      <Fade cascade duration={500} triggerOnce>
 
       {loading
         ? <>Cargando Contenido</>
