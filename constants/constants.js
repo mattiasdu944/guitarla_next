@@ -9,7 +9,7 @@ export const navLinks = [
     },
     {
         name: 'Blog',
-        path: '/entradas',
+        path: '/blog',
     },
     {
         name: 'Tienda',
