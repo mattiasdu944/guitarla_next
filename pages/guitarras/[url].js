@@ -10,24 +10,18 @@ const Producto = ({ guitarra }) => {
   return (
     <Layout pagina={titulo}>
       <main className="container">
-
         <div className={styles.guitarra_page}>
-          <div className={styles.guitarra_title_page}>
-
-            <h3>Guitarra {titulo}</h3>
+          
             <Image
-              width={280} height={550}
+              width={280} height={600}
               src={imagen.url}
               alt={titulo}
-            />
-          </div>
+              />
+          
           <div className={styles.guitarra_content_page}>
-            
-            <h4>
-              Descripcion
-            </h4>
+            <h3 className={styles.guitarra_title_page}>Guitarra {titulo}</h3>
             <p className={styles.guitarra_description_page}>{descripcion}</p>
-            <p className={styles.guitarra_precio}>Precio: ${precio}</p>
+            <p className={styles.guitarra_precio_page}>Precio: ${precio}</p>
           </div>
         </div>
       </main>
@@ -39,7 +33,6 @@ const Producto = ({ guitarra }) => {
 export async function getServerSideProps({ query: { url } }) {
   const responnse = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/guitarras?filters[url][$eq]=${url}&populate=imagen`)
   const { data } = await responnse.json();
-
   return {
     props: {
       guitarra: data[0].attributes

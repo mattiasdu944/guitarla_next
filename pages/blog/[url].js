@@ -12,12 +12,12 @@ const EntradaBlog = ({ entrada }) => {
         <Layout pagina={titulo}>
             <main className="container">
                 <article className={styles.entrada_article}>
-                    <Image layout="responsive" width={300} height={150} src={imagen.url} alt={`Imagen entrada ${titulo}`} />
+                    <Image layout="responsive" width={600} height={400} src={imagen.url} alt={`Imagen entrada ${titulo}`} />
                     <div className={styles.entrada_content}>
+                        <h1 className={styles.blog_title}>{titulo}</h1>
                         <p className={styles.blog_fecha}>
                             Publicado: {formatearFecha(publishedAt)}
                         </p>
-                        <h1 className={styles.blog_title}>{titulo}</h1>
                         <p className={styles.blog_description}>
                             {descripcion}
                         </p>
