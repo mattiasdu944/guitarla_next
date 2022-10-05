@@ -30,12 +30,13 @@
     font-size: 1.5rem;
     display: -webkit-box;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 4;
+    -webkit-line-clamp: 6;
+    text-align: justify;
     overflow: hidden;
 }
 
 .guitarra_precio{
-    font-size: 2rem;
+    font-size: 2.5rem;
     color: var(--primary);
     font-weight: 900;
 }
@@ -65,9 +66,16 @@
 .guitarra_page{
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    gap: 2rem;
+    justify-content: center;
     align-items: center;
     min-height: 100vh;
+}
+
+.guitarra_description_page{
+    font-size: 1.75rem;
+    font-weight: 700;
+    text-align: justify;
 }
 
 @media (min-width: 768px) {
@@ -76,14 +84,18 @@
     }
     
     .guitarra_description_page{
-        height: 70vh;
-        overflow: hidden;
-        overflow-y: scroll;
         width: 500px;
     }
 }
 
-.guitarra_title_page h3{
+.guitarra_title_page{
     color: var(--primary);
+    font-size: 4rem;
+    font-weight: 900;
+}
+
+.guitarra_precio_page{
     font-size: 3rem;
+    font-weight:900;
+    color:var(--primary);
 }
