@@ -24,7 +24,7 @@ const blog = ({ posts }) => {
 }
 
 export async function getServerSideProps() {
-  const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/blogs?populate=imagen&sort=createdAt%3Adesc`)
+  const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/posts?populate=imagen&sort=createdAt%3Adesc`)
   const { data } = await response.json();
   return {
     props: {

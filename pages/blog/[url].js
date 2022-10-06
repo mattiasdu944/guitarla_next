@@ -29,7 +29,7 @@ const EntradaBlog = ({ entrada }) => {
 }
 
 export async function getServerSideProps({ query: { url } }) {
-    const responnse = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/blogs?filters[url][$eq]=${url}&populate=imagen`)
+    const responnse = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/posts?filters[url][$eq]=${url}&populate=imagen`)
     const { data } = await responnse.json();
     return {
         props: {

@@ -6,7 +6,7 @@ const Curso = ({ curso }) => {
         <section className={`${styles.curso} curso`}>
             <style jsx>{`
             .curso{
-                background-image: linear-gradient(to right, rgb( 0 0 0 / .65), rgb(0 0 0 / .7)), url(${imagen.data.attributes.url});
+                background-image: linear-gradient(to right, rgb( 0 0 0 / .65), rgb(0 0 0 / .7)), url(${imagen.data[0].attributes.url});
             }
         `}</style>
             <div className={`container ${styles.grid}`}>
