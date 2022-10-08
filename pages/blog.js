@@ -2,13 +2,8 @@ import { Fade } from "react-awesome-reveal";
 import Layout from "../components/Layout"
 import Post from "../components/blog/Post";
 import styles from "../styles/Listado.module.css"
-import { useEffect } from "react";
 
 const blog = ({ posts }) => {
-  useEffect(() => {
-    console.log(posts);
-
-  }, [posts])
   
   return (
     <Layout pagina={'Blog'}>
