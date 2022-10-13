@@ -24,13 +24,14 @@ const blog = ({ posts }) => {
   )
 }
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/posts?populate=imagen&sort=createdAt%3Adesc`)
   const { data } = await response.json();
   return {
     props: {
       posts: data
-    }
+    },
+    revalidate:86400
   }
 }
 

@@ -28,13 +28,33 @@ const EntradaBlog = ({ entrada }) => {
     )
 }
 
-export async function getServerSideProps({ query: { url } }) {
-    const responnse = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/posts?filters[url][$eq]=${url}&populate=imagen`)
-    const { data } = await responnse.json();
+
+export async function getStaticPaths(){
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/posts`);
+    const { data } = await response.json();
+    // console.log(data[0].attributes.url)
+    const paths = data.map( post => ({
+        params:{
+            url:post.attributes.url
+        }
+    }))
+    console.log(paths)
+
+    return {    
+        paths,
+        fallback:false
+    }
+}
+
+
+export async function getStaticProps({ params: { url } }) {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/posts?filters[url][$eq]=${url}&populate=imagen`)
+    const { data } = await response.json();
     return {
         props: {
             entrada: data[0].attributes
-        }
+        },
+        revalidate: 86400
     }
 }
 
