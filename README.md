@@ -3,4 +3,4 @@
 ## Proyecto Next Js - Strapi v4
 GuitarLA, fue construido con Next Js para el frontend y Strapi para el backend, incluye un blog con distintas entradas  que se obtienen por getStaticProps y getStaticPaths haciendo uso también de Incremental Static Regeneration (ISR). El contenido es totalmente editable desde el administrador de Strapi v4 que utiliza como base de datos PostgreSQL, también cuenta con una pagina de tienda donde se encuentra todas las guitarras que se obtienen mediante getServerSideProps para mostrar el contenido en la pagina.
 
--> Puedes Visitar el demo en el siguiente enlace:  [Guitar LA](http://handlebarsjs.com/) <-
+----> Puedes Visitar el demo en el siguiente enlace:  [Guitar LA](https://guitar-la-nextjs.vercel.app/) <----
